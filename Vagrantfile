@@ -60,8 +60,27 @@ Vagrant.configure("2") do |config|
 		# Now we direct the provisioning of our admin-webserver to take place within the given file.
 		# This will take place within a shell script, executing shell commands
 		awebserver.vm.provision :shell, path: "awebserver.sh"
-
 	end	
+	
+	# Defines/creates a particular VM within the box. This one defines the database-server
+	config.vm.define "database-server" do |dbserver|
+    
+		# Set the name of the server VM to be database-server
+		dbserver.vm.hostname = "database-server"
+
+		# Creates a private network, which allows access to the machine using a specific IP.
+		# This private network allows our different VMs to communicate with each other on the host
+		# IP address for our database-server specified below (different from customer ip):
+		dbserver.vm.network "private_network", ip: "192.168.2.13"
+		
+		# The following line was taken from labs as it is mentioned that it is needed for the CS Labs
+		dbserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+
+		# Now we direct the provisioning of our database-server to take place within the given file.
+		# This will take place within a shell script, executing shell commands
+		dbserver.vm.provision :shell, path: "dbserver.sh"
+
+	end
 
 	
 end

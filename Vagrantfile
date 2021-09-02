@@ -35,8 +35,9 @@ Vagrant.configure("2") do |config|
 		# This will take place within a shell script, executing shell commands
 		cwebserver.vm.provision :shell, path: "cwebserver.sh"
 
-	end
-	
+	end	
+
+
 	# Defines/creates a particular VM within the box. This one defines the admin-webserver
 	config.vm.define "admin-webserver" do |awebserver|
     
@@ -60,6 +61,7 @@ Vagrant.configure("2") do |config|
 		# This will take place within a shell script, executing shell commands
 		awebserver.vm.provision :shell, path: "awebserver.sh"
 
-	end
+	end	
+
 	
 end

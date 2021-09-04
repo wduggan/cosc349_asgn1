@@ -40,15 +40,6 @@ export MYSQL_PWD='admin'
 # Using mysql command to specify the user to connect (business-admin) and the database to use(business).
 cat /vagrant/database-setup.sql | mysql -u business-admin business
 
-# By default, MySQL only listens for local network requests,
-# i.e., that originate from within the dbserver VM. We need to
-# change this so that the webserver VM can connect to the
-# database on the dbserver VM. Use of `sed` is pretty obscure,
-# but the net effect of the command is to find the line
-# containing "bind-address" within the given `mysqld.cnf`
-# configuration file and then to change "127.0.0.1" (meaning
-# local only) to "0.0.0.0" (meaning accept connections from any
-# network interface).
 
 # Command to update the mysql.cnf file so that MySQL will accept connections from any network,
 # rather than just from the local machine (127.0.0.1). This allows our other VM's to connect to the database server VM.

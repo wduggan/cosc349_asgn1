@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang="en">
 
 <head>
@@ -27,6 +27,34 @@
         <section class="boxes">
             <h2>Welcome to the Customer Website</h2>
             <p>...</p>
+
+            <table border="1">
+                <tr>
+                    <th>Product ID</th>
+                    <th>name</th>
+                </tr>
+
+                <?php
+
+                $db_host   = '192.168.2.13';
+                $db_name   = 'business';
+                $db_user   = 'admin';
+                $db_passwd = 'admin';
+
+                $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+
+                $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+
+                $q = $pdo->query("SELECT * FROM products");
+
+                while ($row = $q->fetch()) {
+                    echo "<tr><td>" . $row["productId"] . "</td><td>" . $row["name"] . "</td></tr>\n";
+                }
+
+                ?>
+            </table>
+
+
         </section>
     </main>
 

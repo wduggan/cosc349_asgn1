@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
+
+
 <body>
 	<section class="top-box">
 		<a href="">Admin</a>
@@ -40,14 +42,38 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>ID</td>
-						<td>Name</td>
-						<td>Description</td>
-						<td>Price</td>
-						<td>Quantity</td>
-						<td><button>Buy</button></td>
-					</tr>
+
+					<?php
+
+					$servername = "192.168.2.13";
+					$username = "admin";
+					$password = "admin";
+					$dbname = "business";
+					// Create connection
+					$con = new mysqli($servername, $username, $password, $dbname);
+					// Check connection
+					if ($con->connect_error) {
+						die("Connection failed: " . $con->connect_error);
+					}
+
+
+					$sql = "SELECT * FROM products;";
+					$result = $con->query($sql);
+
+					echo "<script>console.log($result);</script>";
+
+					while ($row = $result->fetch_assoc()) {
+						echo "<tr>";
+						echo "<td>" . $row['productId'] . "</td>";
+						echo "<td>" . $row['name'] . "</td>";
+						echo "<td>" . $row['description'] . "</td>";
+						echo "<td>" . $row['price'] . "</td>";
+						echo "<td>" . $row['quantity'] . "</td>";
+						echo "<td><button>Buy</button></td>";
+						echo "</tr>";
+					}
+					?>
+
 				</tbody>
 			</table>
 

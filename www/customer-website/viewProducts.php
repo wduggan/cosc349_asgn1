@@ -8,7 +8,20 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
+<?php
 
+$servername = "192.168.2.13";
+$username = "business-admin";
+$password = "admin";
+$dbname = "business";
+// Create connection
+$con = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($con->connect_error) {
+	die("Connection failed: " . $con->connect_error);
+}
+
+?>
 
 <body>
 	<section class="top-box">
@@ -45,22 +58,8 @@
 
 					<?php
 
-					$servername = "192.168.2.13";
-					$username = "admin";
-					$password = "admin";
-					$dbname = "business";
-					// Create connection
-					$con = new mysqli($servername, $username, $password, $dbname);
-					// Check connection
-					if ($con->connect_error) {
-						die("Connection failed: " . $con->connect_error);
-					}
-
-
 					$sql = "SELECT * FROM products;";
 					$result = $con->query($sql);
-
-					echo "<script>console.log($result);</script>";
 
 					while ($row = $result->fetch_assoc()) {
 						echo "<tr>";

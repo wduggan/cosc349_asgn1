@@ -38,7 +38,7 @@
 
                 $db_host   = '192.168.2.13';
                 $db_name   = 'business';
-                $db_user   = 'admin';
+                $db_user   = 'business-admin';
                 $db_passwd = 'admin';
 
                 $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";

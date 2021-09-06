@@ -10,7 +10,7 @@
 
 <body>
     <section class="top-box">
-        <a href="">Admin</a>
+        <a href="http://127.0.0.1:8081/">Admin</a>
     </section>
 
     <header>
@@ -26,34 +26,7 @@
     <main>
         <section class="boxes">
             <h2>Welcome to the Customer Website</h2>
-            <p>...</p>
-
-            <table border="1">
-                <tr>
-                    <th>Product ID</th>
-                    <th>name</th>
-                </tr>
-
-                <?php
-
-                $db_host   = '192.168.2.13';
-                $db_name   = 'business';
-                $db_user   = 'business-admin';
-                $db_passwd = 'admin';
-
-                $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
-
-                $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
-
-                $q = $pdo->query("SELECT * FROM products");
-
-                while ($row = $q->fetch()) {
-                    echo "<tr><td>" . $row["productId"] . "</td><td>" . $row["name"] . "</td></tr>\n";
-                }
-
-                ?>
-            </table>
-
+            <p>Use the navigation bar to view products.</p>
 
         </section>
     </main>

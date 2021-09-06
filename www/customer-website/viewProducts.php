@@ -6,6 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/buy.js"></script>
 </head>
 
 <?php
@@ -25,7 +27,7 @@ if ($con->connect_error) {
 
 <body>
 	<section class="top-box">
-		<a href="">Admin</a>
+		<a href="http://127.0.0.1:8081/">Admin</a>
 	</section>
 
 	<header>
@@ -68,7 +70,7 @@ if ($con->connect_error) {
 						echo "<td>" . $row['description'] . "</td>";
 						echo "<td>" . $row['price'] . "</td>";
 						echo "<td>" . $row['quantity'] . "</td>";
-						echo "<td><button>Buy</button></td>";
+						echo "<td><button id='buy'>Buy</button></td>";
 						echo "</tr>";
 					}
 					?>

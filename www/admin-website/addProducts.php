@@ -31,7 +31,7 @@ if ($con->connect_error) {
 	<header>
 		<nav>
 			<ul>
-				<li><a href="index.php">Home</a></li>
+				<li><a href="home.php">Home</a></li>
 				<li><a href="viewProducts.php">View Products</a></li>
 				<li><a>Add Products</a></li>
 			</ul>

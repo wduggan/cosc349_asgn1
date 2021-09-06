@@ -6,8 +6,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/buy.js"></script>
 </head>
 
 <?php
@@ -27,7 +25,7 @@ if ($con->connect_error) {
 
 <body>
 	<section class="top-box">
-		<a href="">Admin</a>
+        <a>Welcome Admin</a>
 	</section>
 
 	<header>

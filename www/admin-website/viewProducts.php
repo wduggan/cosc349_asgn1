@@ -25,7 +25,7 @@ if ($con->connect_error) {
 
 <body>
 	<section class="top-box">
-		<a href="">Admin</a>
+		<a>Welcome Admin</a>
 	</section>
 
 	<header>

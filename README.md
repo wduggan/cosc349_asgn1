@@ -2,6 +2,7 @@
 
 ## Introduction:
 - My application is a very simple online store and administration application which utilises three different virtual machines that interact with one another. One virtual machine (VM) is used to run the customer facing webserver, another to run the administration webserver, and another to run the database server.
+- Full explanation on the design of the application is in the report within this repository
 
 ## How to use the application:
 

@@ -2,7 +2,7 @@ echo "Starting to read dbserver.sh"
 
 
 # Command to update Ubuntu packages
-apt-get update
+apt-get update && apt-get upgrade -y
 
 
 # Creates a shell variable MYSQL_PWD that contains the MySQL root password

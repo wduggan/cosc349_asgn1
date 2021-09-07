@@ -2,7 +2,7 @@ echo "Starting to read cwebserver.sh"
 
 # Command to update packages
 echo "Updating packages"
-apt-get update
+apt-get update && apt-get upgrade -y
 
 echo "Installing apache and php"
 # Command to install apache and php
